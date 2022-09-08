@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Alex Diew",
+    "review": "Vivamus suscipit tortor eget felis porttitor volutpat. Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur elit donec sollicitudin molestie eget.",
+    "img": "https://siop-ng.envytheme.com/assets/images/customer/customer-2.png"
+  },
+  {
+    "name": "Georiga cargiili",
+    "review": "Vivamus suscipit tortor eget felis porttitor volutpat. Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur elit donec sollicitudin molestie eget.",
+    "img": "https://siop-ng.envytheme.com/assets/images/customer/customer-1.png"
+  },
+  {
+    "name": "Jhon Deo",
+    "review": "Vivamus suscipit tortor eget felis porttitor volutpat. Nulla porttitor accumsan tincidunt. Lorem ipsum dolor sit amet, consectetur elit donec sollicitudin molestie eget.",
+    "img": "https://siop-ng.envytheme.com/assets/images/customer/customer-1.png"
+  }
+]

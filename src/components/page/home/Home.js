@@ -10,9 +10,9 @@ import Slider from "./Slider";
 const Home = () => {
   return (
     <div>
-      {/* <Slider /> */}
-      {/* <PopularCategory /> */}
-      {/* <FeatureProduct /> */}
+      <Slider />
+      <PopularCategory />
+      <FeatureProduct />
       <Banner />
       <CustomerReview />
       <CutomerSummery />

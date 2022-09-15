@@ -24,7 +24,7 @@ const BusinessSummary = () => {
         >
           <p className=""></p>
           <div class="card-body items-center text-center">
-            <p className="text-green-700 text-5xl">
+            <p className="text-primary text-5xl">
               <BsFillFlagFill />
             </p>
             <CountUp start={0} end={1000}></CountUp>
@@ -38,7 +38,7 @@ const BusinessSummary = () => {
         >
           <p className=""></p>
           <div class="card-body items-center text-center">
-            <p className="text-green-700 text-5xl">
+            <p className="text-primary text-5xl">
               <FiMonitor />
             </p>
             <CountUp start={0} end={535} suffix="+"></CountUp>
@@ -52,7 +52,7 @@ const BusinessSummary = () => {
         >
           <p className=""></p>
           <div class="card-body items-center text-center">
-            <p className="text-green-700 text-5xl">
+            <p className="text-primary text-5xl">
               <IoIosPeople />
             </p>
             <CountUp start={0} end={1000} suffix="+"></CountUp>
@@ -66,7 +66,7 @@ const BusinessSummary = () => {
         >
           <p className=""></p>
           <div class="card-body items-center text-center">
-            <p className="text-green-700 text-5xl">
+            <p className="text-primary text-5xl">
               <AiFillLike />
             </p>
             <CountUp start={0} end={1000} suffix="+"></CountUp>

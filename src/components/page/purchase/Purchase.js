@@ -21,20 +21,25 @@ const Purchase = () => {
   const [user] = useAuthState(auth);
   let errElement = "";
   useEffect(() => {
-    axios.get(`http://localhost:3000/product/purchase/${id}`).then((res) => {
-      setLoading(true);
-      return setPurchase(res.data);
-    });
+    axios
+      .get(`https://tools-shop-backend.vercel.app/product/purchase/${id}`)
+      .then((res) => {
+        setLoading(true);
+        return setPurchase(res.data);
+      });
   }, []);
   const handleOrder = async (e) => {
     e.preventDefault();
 
-    const { data } = await axios.post("http://localhost:3000/order/myorder", {
-      pName: purchase?.pName,
-      price: purchase?.price,
-      user: user?.email,
-      quantity: quantity,
-    });
+    const { data } = await axios.post(
+      "https://tools-shop-backend.vercel.app/order/myorder",
+      {
+        pName: purchase?.pName,
+        price: purchase?.price,
+        user: user?.email,
+        quantity: quantity,
+      }
+    );
     console.log(data.message);
     if (data.message === "Success") {
       toast("Order Placed successfully");

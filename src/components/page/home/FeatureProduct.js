@@ -19,7 +19,7 @@ const FeatureProduct = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/product/getProduct")
+      .get("https://tools-shop-backend.vercel.app/product/getProduct")
       .then((res) => setFeatureProduct(res.data));
   }, []);
 

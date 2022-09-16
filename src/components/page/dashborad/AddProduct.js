@@ -4,13 +4,13 @@ import addProduct from "../../../assets/add.jpg";
 const AddProduct = () => {
   const handleAddProduct = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
+    const pName = event.target.name.value;
     const img = event.target.img.value;
     const description = event.target.message.value.slice(0, 100);
     const quantity = event.target.quantity.value;
-    const miniumqnt = event.target.minquantity.value;
+    const minQuantity = event.target.minquantity.value;
     const price = event.target.price.value;
-    const data = { name, img, description, quantity, miniumqnt, price };
+    const data = { pName, img, description, quantity, minQuantity, price };
     console.log(data);
 
     fetch("http://localhost:3000/product/post", {

@@ -8,6 +8,7 @@ import { GiConfirmed } from "react-icons/gi";
 import Loading from "../../shere/Loading";
 import auth from "../../../Firebaseinit";
 import Sociallogin from "../../../components/shere/Sociallogin";
+import axios from "axios";
 const Register = () => {
   const [agree, setAgree] = useState(false);
   const [passError, setPassError] = useState("");
@@ -34,7 +35,7 @@ const Register = () => {
     } else {
       setPassError("Password do not match");
     }
-
+    //  axios.post('')
     reset();
   };
 

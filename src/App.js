@@ -12,6 +12,7 @@ import ManageOrders from "./components/page/dashborad/ManageOrder";
 import RequireAdmin from "./components/page/dashborad/Requiradmin";
 import Payment from "./components/page/dashborad/Payment";
 import Alluser from "./components/page/dashborad/Alluser";
+import PrivateRoute from "../src/components/page/route/PrivateRoute";
 
 function App() {
   return (
@@ -22,7 +23,14 @@ function App() {
           <Route path={path} element={<Component />} />
         ))}
 
-        <Route path="purchase/:id" element={<Purchase />} />
+        <Route
+          path="purchase/:id"
+          element={
+            <PrivateRoute>
+              <Purchase />
+            </PrivateRoute>
+          }
+        />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="myorder" element={<MyOrder />} />
           <Route path="addreview" element={<AddReview />} />

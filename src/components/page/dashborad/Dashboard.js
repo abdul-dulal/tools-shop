@@ -20,27 +20,27 @@ const DashBoard = () => {
             <li>
               <NavLink to="/dashboard/addproduct"> Add Product</NavLink>
             </li>
-            {/* {!admin && ( */}
-            <li>
-              <NavLink to="/dashboard/myorder"> My Order</NavLink>
-            </li>
-            {/* )} */}
-            {/* {!admin && ( */}
-            <li>
-              <NavLink to="/dashboard/addreview"> Add Review</NavLink>
-            </li>
-            {/* )} */}
+            {!admin && (
+              <li>
+                <NavLink to="/dashboard/myorder"> My Order</NavLink>
+              </li>
+            )}
+            {!admin && (
+              <li>
+                <NavLink to="/dashboard/addreview"> Add Review</NavLink>
+              </li>
+            )}
 
-            {/* {admin && ( */}
-            <>
-              <li>
-                <Link to="/dashboard/alluser"> Make Admin</Link>
-              </li>
-              <li>
-                <NavLink to="/dashboard/manageorder"> Mange Orders</NavLink>
-              </li>
-            </>
-            {/* )} */}
+            {admin && (
+              <>
+                <li>
+                  <Link to="/dashboard/alluser"> Make Admin</Link>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageorder"> Mange Orders</NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

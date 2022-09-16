@@ -23,6 +23,7 @@ const Login = () => {
   const navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
+
   if (error) {
     errorElement = error.message;
   }

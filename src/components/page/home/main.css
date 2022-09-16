@@ -5,6 +5,7 @@
   opacity: 1;
   border: 2px solid white;
   padding: 2px;
+  margin-top: 10;
 }
 
 .swiper-pagination-bullet-active {
@@ -18,8 +19,7 @@
   background-color: #ff6a00;
   color: white;
   padding: 18px 36px;
-  display: inline-block;
-
+  padding-top: 10px;
   transition: ease-out 1s;
 }
 

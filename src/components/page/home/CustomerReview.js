@@ -16,7 +16,9 @@ const CustomerReview = () => {
   const [flashDeals, setFlashDeals] = useState([]);
   const [review, setRevies] = useState([]);
   const navigate = useNavigate();
-  const handleNavigate = (id) => {};
+  const handleNavigate = (id) => {
+    navigate(`purchase/${id}`);
+  };
 
   useEffect(() => {
     axios
@@ -33,7 +35,7 @@ const CustomerReview = () => {
         <h1 className="text-3xl font-serif">Customer Review</h1>
         <img src={underline} alt="" />
         <Swiper
-          modules={[Autoplay, Pagination, A11y]}
+          modules={[Autoplay, A11y]}
           spaceBetween={0}
           slidesPerView={1}
           autoplay={true}
@@ -51,27 +53,31 @@ const CustomerReview = () => {
           ))}
         </Swiper>
       </div>
-      <div className="col-span-3  lg:mt-0 md:mt-0 mt-10 ">
+      <div className="lg:col-span-3  lg:mt-0 md:mt-0 mt-10 ">
         <h1 className="text-3xl font-serif">Flash Deals</h1>
         <img src={underline} alt="" />
 
         <Swiper
           breakpoints={{
-            640: {
-              width: 640,
+            425: {
+              width: 425,
+              slidesPerView: 1,
+            },
+            688: {
+              width: 688,
               slidesPerView: 2,
             },
-            768: {
-              width: 768,
+            950: {
+              width: 950,
               slidesPerView: 2,
             },
           }}
-          modules={[Autoplay, Pagination, A11y]}
-          spaceBetween={0}
+          modules={[Autoplay, A11y, Pagination]}
           pagination={{ clickable: true }}
+          spaceBetween={0}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
-          className="border border-[#FF6A00] mt-6 "
+          className="border border-[#FF6A00] my-10 "
         >
           {flashDeals.map((flashDeal) => (
             <SwiperSlide>
@@ -81,17 +87,17 @@ const CustomerReview = () => {
                     <img src={flashDeal.img} alt="" />
                   </div>
                   <div className="space-y-2">
-                    <p>{flashDeal.pName}</p>
+                    <p>{flashDeal.pName.slice(0, 47)}</p>
                     <p>Available Quantity : {flashDeal.quantity}</p>
                     <p> Order Quantity : {flashDeal.minQuantity}</p>
                     <Ratting />
                     <p className="text-[#FF6A00]">Price : ${flashDeal.price}</p>
-                    <button
-                      onClick={() => navigate(`/purchase/${flashDeal._id}`)}
-                      className=" w-36 h-12 rounded mt-3 bg-[#FF6A00] duration-500 flex justify-center items-center text-white"
+                    <p
+                      onClick={() => handleNavigate(flashDeal._id)}
+                      className=" w-36 h-12 rounded mt-3 bg-[#FF6A00] duration-500 flex justify-center items-center text-white cursor-pointer"
                     >
                       Buy Now
-                    </button>
+                    </p>
                   </div>
                 </div>
               </div>

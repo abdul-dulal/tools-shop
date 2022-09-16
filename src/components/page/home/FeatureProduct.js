@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import feature from "../../../assets/category/popular/featured-offer-img-2.067ace69d773bbdb.png";
 import underline from "../../../assets/underline.png";
-import { Navigation, Autoplay, A11y } from "swiper";
+import { Autoplay, A11y } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -11,9 +11,11 @@ import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 import axios from "axios";
 import Ratting from "../../shere/Ratting";
+import { useNavigate } from "react-router-dom";
 
 const FeatureProduct = () => {
   const [featureProduct, setFeatureProduct] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -79,7 +81,10 @@ const FeatureProduct = () => {
                     <p>Minimum Order Quantity : {product.minQuantity}</p>
                     <p className="mt-2">Price ${product.price}</p>
                     <Ratting />
-                    <div className=" w-36 h-12 rounded mt-3 bg-[#FF6A00] duration-500 flex justify-center items-center text-white">
+                    <div
+                      onClick={() => navigate(`/purchase/${product._id}`)}
+                      className=" w-36 h-12 rounded mt-3 bg-[#FF6A00] duration-500 flex justify-center items-center text-white"
+                    >
                       Buy Now
                     </div>
                   </div>

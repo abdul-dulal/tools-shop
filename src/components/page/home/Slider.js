@@ -15,8 +15,10 @@ import sidebar2 from "../../../assets/img/sidebar2.jpg";
 import Fade from "react-reveal/Fade";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
 
 const Slider = () => {
+  const navigate = useNavigate();
   return (
     <div className="container grid lg:grid-cols-4 md:grid-cols-1  gap-5 my-10 mb-14">
       <div className="lg:col-span-3 lg:block md:block hidden">
@@ -45,7 +47,13 @@ const Slider = () => {
                   <h1 className="text-4xl font-bold"> Decoration 2021</h1>
                   <p className="text-medium mt-4">from $159</p>
                 </Fade>
-                <div class="button_slide slide_diagonal">Shop Now</div>;
+                <div
+                  onClick={() => navigate("/shop")}
+                  class="w-40 h-12 bg-primary text-center text-white pt-3"
+                >
+                  Shop Now
+                </div>
+                ;
               </div>
             </div>
           </SwiperSlide>
@@ -66,7 +74,12 @@ const Slider = () => {
                   <h1 className="text-4xl font-bold"> Quality Tools</h1>
                   <p className="text-medium mt-4">from $199</p>
                 </Fade>
-                <div class="button_slide slide_diagonal">Shop Now</div>
+                <div
+                  onClick={() => navigate("/shop")}
+                  class="w-40 cursor-pointer h-12 bg-primary text-center text-white pt-3"
+                >
+                  Shop Now
+                </div>
               </div>
             </div>
           </SwiperSlide>
@@ -87,7 +100,12 @@ const Slider = () => {
                   <h1 className="text-4xl font-bold"> Quality Tools</h1>
                   <p className="text-medium mt-4">from $199</p>
                 </Fade>
-                <div class="button_slide slide_diagonal">Shop Now</div>
+                <div
+                  onClick={() => navigate("/shop")}
+                  class="w-40 h-12 bg-primary text-center text-white pt-3"
+                >
+                  Shop Now
+                </div>
               </div>
             </div>
           </SwiperSlide>

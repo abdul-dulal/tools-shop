@@ -22,7 +22,7 @@ const Purchase = () => {
   let errElement = "";
   useEffect(() => {
     axios
-      .get(`https://tools-shop-backend.vercel.app/product/purchase/${id}`)
+      .get(`https://tools-shop.onrender.com/product/purchase/${id}`)
       .then((res) => {
         setLoading(true);
         return setPurchase(res.data);
@@ -32,15 +32,14 @@ const Purchase = () => {
     e.preventDefault();
 
     const { data } = await axios.post(
-      "https://tools-shop-backend.vercel.app/order/myorder",
+      "https://tools-shop.onrender.com/order/myorder",
       {
         pName: purchase?.pName,
-        price: purchase?.price,
+        price: purchase?.price * quantity,
         user: user?.email,
         quantity: quantity,
       }
     );
-    console.log(data.message);
     if (data.message === "Success") {
       toast("Order Placed successfully");
     }

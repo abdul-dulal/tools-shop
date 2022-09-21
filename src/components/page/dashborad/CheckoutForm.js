@@ -77,9 +77,8 @@ const CheckoutForm = ({ payment }) => {
         orderId: _id,
         transactionId: paymentIntent.id,
       };
-      const url = `https://secret-brook-35937.herokuapp.com/order/${_id}`;
 
-      fetch(url, {
+      fetch(`https://tools-shop.onrender.com/order/order/${_id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

@@ -15,22 +15,22 @@ const Payment = () => {
     error,
     data: payment,
   } = useQuery(["repoData", id], () =>
-    fetch(`https://secret-brook-35937.herokuapp.com/order/${id}`).then((res) =>
-      res.json()
+    fetch(`https://tools-shop.onrender.com/order/order_byId/${id}`).then(
+      (res) => res.json()
     )
   );
   if (isLoading) {
     return <Loading />;
   }
-  const { prodcutNmae, price, quantity } = payment;
+  console.log(payment);
 
   return (
     <div>
       <div class="card max-w-lg bg-base-200 shadow-xl">
         <div class="card-body">
-          <h2 class="card-title">{prodcutNmae}</h2>
-          <p>Qauntity : {quantity}</p>
-          <p> Total Price : $ {price}</p>
+          <h2 class="card-title">{payment?.prodcutNmae}</h2>
+          <p>Qauntity : {payment?.quantity}</p>
+          <p> Total Price : $ {payment?.price}</p>
         </div>
         <div class="my-3  px-8">
           <Elements stripe={stripePromise}>

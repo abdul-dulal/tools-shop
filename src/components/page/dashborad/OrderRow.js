@@ -1,14 +1,17 @@
 import React from "react";
-
+import { AiFillDelete } from "react-icons/ai";
 const OrderRow = ({ order, index }) => {
-  console.log(order);
-  const { prodcutNmae, email } = order;
+  const { pName, user } = order;
   return (
     <tr>
       <th>{index + 1}</th>
-      <td>{email}</td>
-      <td>{prodcutNmae}</td>
+      <td>{user}</td>
+      <td>{pName}</td>
+
       <td></td>
+      <td>
+        <AiFillDelete className="text-xl font-bold" />
+      </td>
     </tr>
   );
 };

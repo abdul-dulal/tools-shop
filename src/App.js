@@ -11,8 +11,8 @@ import AddReview from "./components/page/dashborad/AddReview";
 import ManageOrders from "./components/page/dashborad/ManageOrder";
 import RequireAdmin from "./components/page/dashborad/Requiradmin";
 import Payment from "./components/page/dashborad/Payment";
-import Alluser from "./components/page/dashborad/Alluser";
 import PrivateRoute from "../src/components/page/route/PrivateRoute";
+import Alluser from "./components/page/dashborad/Alluser";
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
           <Route path="manageorder" element={<ManageOrders />} />
           <Route path="payment/:id" element={<Payment />} />
           <Route
-            path="alluser"
+            path="make_admin"
             element={
               <RequireAdmin>
                 <Alluser />

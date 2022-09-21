@@ -8,6 +8,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import Loading from "../../shere/Loading";
 import Sociallogin from "../../shere/Sociallogin";
 import auth from "../../../Firebaseinit";
+import axios from "axios";
 
 const Login = () => {
   const {
@@ -29,6 +30,15 @@ const Login = () => {
   }
   const onSubmit = async (data) => {
     signInWithEmailAndPassword(data.email, data.password);
+    const { data: result } = await axios.post(
+      "https://tools-shop.onrender.com/user/login",
+      {
+        email: data.email,
+        password: data.password,
+      }
+    );
+
+    localStorage.setItem("token", result);
   };
   if (user) {
     navigate(from, { replace: true });

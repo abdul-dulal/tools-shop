@@ -6,27 +6,23 @@ import auth from "../../../Firebaseinit";
 const UserDeatils = ({ newUser, index, refetch }) => {
   const [user] = useAuthState(auth);
   const { email, role } = newUser;
-  const currentUser = { email: email };
+  const currentUser = { email: email, role: "admin" };
+
   const makeAdmin = () => {
-    fetch(`https://secret-brook-35937.herokuapp.com/user/admin/${email}`, {
-      method: "PUT", // or 'PUT'
+    fetch(`https://tools-shop.onrender.com/user/makeAdmin/${email}`, {
+      method: "PUT",
       headers: {
         "content-Type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify(currentUser),
     })
       .then((response) => {
-        if (response.status === 403) {
-          toast.error("Fail to Make Admin");
-        }
         return response.json();
       })
       .then((data) => {
-        if (data.modifiedCount > 0) {
-          refetch();
-          toast.success("successfully made an admin");
-        }
+        refetch();
+        toast.success("successfully made an admin");
       });
   };
 
@@ -37,7 +33,7 @@ const UserDeatils = ({ newUser, index, refetch }) => {
       <td>{email}</td>
       <td>
         {role !== "admin" ? (
-          <button onClick={makeAdmin} class="btn btn-xs">
+          <button onClick={makeAdmin} class="btn w-32  h-8 text-white rounded">
             Make Admin
           </button>
         ) : (

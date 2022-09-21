@@ -28,14 +28,18 @@ const Register = () => {
     const email = data.email;
     const password = data.password;
     const confirmPassword = data.conPassword;
-    console.log(confirmPassword);
 
     if (password == confirmPassword) {
       createUserWithEmailAndPassword(email, password);
     } else {
       setPassError("Password do not match");
     }
-    //  axios.post('')
+    axios
+      .post("https://tools-shop.onrender.com/user/signup", {
+        email: data.email,
+        password: data.password,
+      })
+      .then((res) => res);
     reset();
   };
 

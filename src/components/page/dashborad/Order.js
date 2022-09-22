@@ -6,7 +6,7 @@ const Order = ({ order, index, refetch, isLoading }) => {
   const { pName, quantity, price, _id, transactionId } = order;
   const navigate = useNavigate();
   const cancelOrder = (id) => {
-    fetch(`http://localhost:3000/order/deleteOrder/${id}`, {
+    fetch(`https://tools-shop.onrender.com/order/deleteOrder/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -8,7 +8,7 @@ const Alluser = () => {
     data: users,
     refetch,
   } = useQuery("repoData", () =>
-    fetch("http://localhost:3000/user/all_user", {
+    fetch("flash-dealsuser/all_user", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
       },

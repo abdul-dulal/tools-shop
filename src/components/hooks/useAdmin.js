@@ -5,7 +5,7 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`http://localhost:3000/user/check_admin/${email}`, {
+      fetch(`flash-dealsuser/check_admin/${email}`, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("token")}`,
         },

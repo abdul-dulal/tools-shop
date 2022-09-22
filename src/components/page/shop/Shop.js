@@ -9,7 +9,7 @@ const Shop = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://tools-shop.onrender.com/product/allProduct")
+      .get("http://localhost:3000/product/allProduct")
       .then((res) => setProduct(res.data));
   }, []);
   return (

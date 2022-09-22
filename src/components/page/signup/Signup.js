@@ -35,7 +35,7 @@ const Register = () => {
       setPassError("Password do not match");
     }
     axios
-      .post("https://tools-shop.onrender.com/user/signup", {
+      .post("http://localhost:3000/user/signup", {
         email: data.email,
         password: data.password,
       })

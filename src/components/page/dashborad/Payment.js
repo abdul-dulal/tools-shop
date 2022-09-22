@@ -15,8 +15,8 @@ const Payment = () => {
     error,
     data: payment,
   } = useQuery(["repoData", id], () =>
-    fetch(`https://tools-shop.onrender.com/order/order_byId/${id}`).then(
-      (res) => res.json()
+    fetch(`http://localhost:3000/order/order_byId/${id}`).then((res) =>
+      res.json()
     )
   );
   if (isLoading) {

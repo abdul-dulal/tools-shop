@@ -13,7 +13,7 @@ const AddProduct = () => {
     const data = { pName, img, description, quantity, minQuantity, price };
     console.log(data);
 
-    fetch("https://tools-shop.onrender.com/product/post", {
+    fetch("http://localhost:3000/product/post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

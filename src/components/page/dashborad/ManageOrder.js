@@ -6,7 +6,7 @@ const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch("https://tools-shop.onrender.com/order/manage_order")
+    fetch("http://localhost:3000/order/manage_order")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);

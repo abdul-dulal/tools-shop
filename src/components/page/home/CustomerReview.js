@@ -22,10 +22,10 @@ const CustomerReview = () => {
 
   useEffect(() => {
     axios
-      .get("https://tools-shop.onrender.com/product/flash-deals")
+      .get("http://localhost:3000/product/flash-deals")
       .then((res) => setFlashDeals(res.data));
     axios
-      .get("https://tools-shop.onrender.com/review/getReview")
+      .get("http://localhost:3000/review/getReview")
       .then((res) => setRevies(res.data));
   }, []);
 

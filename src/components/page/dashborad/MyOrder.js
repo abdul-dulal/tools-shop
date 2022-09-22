@@ -15,15 +15,12 @@ const MyOrder = () => {
     data: orders,
     refetch,
   } = useQuery("repoData", () =>
-    fetch(
-      `https://tools-shop.onrender.com/order/orderByEmail/?email=${email}`,
-      {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    ).then((res) => res.json())
+    fetch(`http://localhost:3000/order/orderByEmail/?email=${email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading />;

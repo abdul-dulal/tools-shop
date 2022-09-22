@@ -8,7 +8,7 @@ const Alluser = () => {
     data: users,
     refetch,
   } = useQuery("repoData", () =>
-    fetch("https://tools-shop.onrender.com/user/all_user", {
+    fetch("http://localhost:3000/user/all_user", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
       },

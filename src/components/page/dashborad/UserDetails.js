@@ -9,7 +9,7 @@ const UserDeatils = ({ newUser, index, refetch }) => {
   const currentUser = { email: email, role: "admin" };
 
   const makeAdmin = () => {
-    fetch(`https://tools-shop.onrender.com/user/makeAdmin/${email}`, {
+    fetch(`https://tools-shop-backend.onrender.com/user/makeAdmin/${email}`, {
       method: "PUT",
       headers: {
         "content-Type": "application/json",

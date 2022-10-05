@@ -19,7 +19,7 @@ const FeatureProduct = () => {
 
   useEffect(() => {
     axios
-      .get("https://tools-shop.onrender.com/product/getProduct")
+      .get("https://tools-shop-backend.onrender.com/product/getProduct")
       .then((res) => setFeatureProduct(res.data));
   }, []);
 

@@ -78,7 +78,7 @@ const CheckoutForm = ({ payment }) => {
         transactionId: paymentIntent.id,
       };
 
-      fetch(`https://tools-shop.onrender.com/order/order/${_id}`, {
+      fetch(`https://tools-shop-backend.onrender.com/order/order/${_id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

@@ -16,7 +16,7 @@ const MyOrder = () => {
     refetch,
   } = useQuery("repoData", () =>
     fetch(
-      `https://tools-shop.onrender.com/order/orderByEmail/?email=${email}`,
+      `https://tools-shop-backend.onrender.com/order/orderByEmail/?email=${email}`,
       {
         method: "GET",
         headers: {

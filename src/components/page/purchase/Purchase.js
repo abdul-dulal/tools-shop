@@ -22,7 +22,7 @@ const Purchase = () => {
   let errElement = "";
   useEffect(() => {
     axios
-      .get(`https://tools-shop.onrender.com/product/purchase/${id}`)
+      .get(`https://tools-shop-backend.onrender.com/product/purchase/${id}`)
       .then((res) => {
         setLoading(true);
         return setPurchase(res.data);
@@ -32,7 +32,7 @@ const Purchase = () => {
     e.preventDefault();
 
     const { data } = await axios.post(
-      "https://tools-shop.onrender.com/order/myorder",
+      "https://tools-shop-backend.onrender.com/order/myorder",
       {
         pName: purchase?.pName,
         price: purchase?.price * quantity,
